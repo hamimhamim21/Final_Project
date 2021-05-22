@@ -15,7 +15,7 @@ import xgboost
 
 app = Flask(__name__)
 model_path = "finalized_model.pkl"
-loaded_model = pickle.load(open(filename, 'rb'))
+loaded_model = pickle.load(open(model_path, 'rb'))
 #---------------------- LOAD MODELS   -----------------------------------
 MODEL_PATH = "xgboost_best_model_2024.joblib"
 
