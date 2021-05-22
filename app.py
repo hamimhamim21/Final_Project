@@ -163,17 +163,12 @@ def login():
                               # #['Rooms', 'Distance', 'Bathroom', 'Car', 'Landsize', 'Year', 'Month', 'Crime', 'Type_h', 'Type_t', 'Type_u']
                               X = pd.DataFrame([Rooms, Distance, Bathrooms, Cars, Landsize, Year, Month, Crime, Type_h, Type_t, Type_u], 
                                                       ['Rooms', 'Distance', 'Bathroom', 'Car', 'Landsize', 'Year', 'Month', 'Crime', 'Type_h', 'Type_t', 'Type_u']).T
+                              print("Input")
+                              print(X.head())
                               print("PREDICTION VALUES ARE")
-                              model = load("xgboost_best_model_2024.joblib")
-                              time.sleep(10)
-                              print("Model loaded")
-                              print(model)
-                              print("Prediction")
+                              predict = loaded_model.predict(X)
                               # run predict function from persist
-                              
-                              predict = model.predict(X)
-                              time.sleep(10)
-                              
+                                                     
                               print("I PREDICTED")
                               print(predict)
                               # format value predicted
