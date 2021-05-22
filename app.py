@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, jsonify, request
 import scrape
 from match_csvs import melb_avg, distance_crime
 # from model.persist import load_model, load_model_NL, predict_value, predict_value_NL
-
+import pickle
 import requests
 from flask import Flask, redirect, url_for, request
 import numpy as np
@@ -14,8 +14,8 @@ import xgboost
 
 
 app = Flask(__name__)
-
-
+model_path = "finalized_model.pkl"
+loaded_model = pickle.load(open(filename, 'rb'))
 #---------------------- LOAD MODELS   -----------------------------------
 MODEL_PATH = "xgboost_best_model_2024.joblib"
 
