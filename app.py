@@ -263,8 +263,9 @@ def login():
                                                       ['Rooms', 'Distance', 'Bathroom', 'Car', 'Year', 'Month', 'Crime', 'Type_h', 'Type_t', 'Type_u']).T
                            
                               # run predict function from persist
-                              predict = round(predict_value_NL(X)[0])
-                              print(X)
+                              predict = loaded_model.predict(X)
+                              print("Predicted model values")
+                              print(predict)
                               # format value predicted
                               prediction_formated = f"{predict:,}"
                               # append values to features
