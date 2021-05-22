@@ -7,7 +7,7 @@ import requests
 from flask import Flask, redirect, url_for, request
 import numpy as np
 import pandas as pd
-
+import time
 
 from joblib import dump, load
 import xgboost
@@ -165,11 +165,15 @@ def login():
                                                       ['Rooms', 'Distance', 'Bathroom', 'Car', 'Landsize', 'Year', 'Month', 'Crime', 'Type_h', 'Type_t', 'Type_u']).T
                               print("PREDICTION VALUES ARE")
                               model = load("xgboost_best_model_2024.joblib")
+                              time.sleep(10)
                               print("Model loaded")
                               print(model)
                               print("Prediction")
                               # run predict function from persist
+                              
                               predict = model.predict(X)
+                              time.sleep(10)
+                              
                               print("I PREDICTED")
                               print(predict)
                               # format value predicted
